@@ -1,5 +1,9 @@
 body {
   background-color: slategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .gameBoard {
