@@ -18,12 +18,18 @@ function togglePlayer() {
   }
 }
 
+function handleClick(cell, index) {
+
+  console.log("you clicked" + index);
+  cell.style.backgroundColor = color;
+  togglePlayer();
+  // cell.removeEventListener('click', handleClick());
+  cell.style.pointerEvents = "none";
+}
 
 
 cells.forEach((cell, index) => {
   cell.addEventListener('click', () => {
-    console.log("you clicked" + index);
-    cell.style.backgroundColor = color;
-    togglePlayer();
+    handleClick(cell, index);
   });
 });
