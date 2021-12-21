@@ -1,0 +1,18 @@
+body {
+  background-color: slategray;
+}
+
+.gameBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 16em;
+}
+
+.cell {
+  background-color: cornflowerblue;
+  min-height: 5em;
+  min-width: 5em;
+  border: 2px solid black;
+}
