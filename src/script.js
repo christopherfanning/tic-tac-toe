@@ -24,17 +24,16 @@ function togglePlayer() {
 
 function handleClick(cell, index) {
   moves[currentPlayer].push(index);
-  console.log("you clicked" + index);
   cell.style.backgroundColor = color;
+  checkWinningCondition();
   togglePlayer();
   cell.style.pointerEvents = "none";
   console.log(moves);
-  checkWinningCondition();
 }
 
 
 function checkWinningCondition() {
-  // Check the array for possible winning conditions. 
+  // Check the movesArray for current player for possible winning conditions. 
   let winningConditions = [
 
     [0, 3, 6],
@@ -47,8 +46,41 @@ function checkWinningCondition() {
     [2, 4, 6]
   ];
 
-  // or use an object instead of an array.
+  // let checker = (arr, target) => target.every(v => arr.includes(v));
+  let checker = moves[currentPlayer].every(v => {
+    return winningConditions.forEach(arr => {
+      return arr.includes(v);
+      // console.log(`player ${currentPlayer} wins!!`);
+    });
+  });
+
+  let cwc = winningConditions.forEach(condition => {
+
+    return condition.every(arr => {
+      return moves[currentPlayer].includes(arr);
+    });
+  });
+
+  winningConditions.forEach(arr => {
+    if (moves[currentPlayer].includes(arr.values())) {
+      console.log("yay!");
+    }
+
+  });
+  console.log(checker);
+  console.log(cwc);
+
+  if (checker == true) {
+
+    console.log(`player ${currentPlayer} wins!!`);
+  }
+  // moves[currentPlayer].forEach(move => {
+  //   console.log(move);
+
+  // });
 }
+
+
 
 cells.forEach((cell, index) => {
   cell.addEventListener('click', () => {
