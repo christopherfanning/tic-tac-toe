@@ -35,6 +35,12 @@ function handleClick(cell, index) {
 
 function checkWinningCondition() {
   // Check the array for possible winning conditions. 
+  let winningConditions = [
+
+    [0, ]
+  ];
+
+  // or use an object instead of an array.
 }
 
 cells.forEach((cell, index) => {
