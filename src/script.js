@@ -1,4 +1,8 @@
 let cells = document.querySelectorAll('.cell');
+let moves = [
+  [],
+  []
+];
 
 let currentPlayer = 0;
 // let p1 = "orange";
@@ -19,14 +23,19 @@ function togglePlayer() {
 }
 
 function handleClick(cell, index) {
-
+  moves[currentPlayer].push(index);
   console.log("you clicked" + index);
   cell.style.backgroundColor = color;
   togglePlayer();
-  // cell.removeEventListener('click', handleClick());
   cell.style.pointerEvents = "none";
+  console.log(moves);
+  checkWinningCondition();
 }
 
+
+function checkWinningCondition() {
+  // Check the array for possible winning conditions. 
+}
 
 cells.forEach((cell, index) => {
   cell.addEventListener('click', () => {
