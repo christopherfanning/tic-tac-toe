@@ -28,6 +28,20 @@ body {
   min-width: 5em;
 }
 
+
+.winStatusSection {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.winningColor {
+  height: 5rem;
+  width: 5rem;
+  border: 1px solid black;
+
+}
+
 .resetButton {
   padding: .3rem;
   margin: 1rem;
