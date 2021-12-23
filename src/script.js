@@ -52,6 +52,7 @@ function checkWinningCondition() {
     if (isWinPresent(moves[currentPlayer], arr)) {
       console.log(`!!!!!!!!!!!!!!!!!!!Player ${currentPlayer} wins!!!!!!!!!!!!!!!!!!!!!!!!!`);
       // TODO alert on page, disable anymore clicks. maybe use an overlay. 
+      document.querySelector('.winStatus').innerHTML = '<h1>Player Wins!</h1>';
     }
   });
 }
