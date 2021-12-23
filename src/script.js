@@ -27,7 +27,7 @@ function handleClick(cell, cellClicked) {
   togglePlayer();
   cell.style.pointerEvents = "none";
 }
-
+// TODO DRAW Condition!!!
 
 function checkWinningCondition() {
   // Check the movesArray for current player for possible winning conditions. 
