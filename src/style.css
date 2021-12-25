@@ -7,19 +7,25 @@ body {
   flex-direction: column; */
 }
 
-.gameBoard {
+/* .gameBoard {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   max-width: 16em;
-}
+} */
 
 .cell {
   background-color: cornflowerblue;
-  min-height: 5em;
-  min-width: 5em;
+  height: 5em;
+  width: 5em;
+  max-width: 5rem;
+  max-height: 5rem;
   border: 2px solid black;
+}
+
+.cell:hover {
+  background-color: aqua;
 }
 
 .color {
