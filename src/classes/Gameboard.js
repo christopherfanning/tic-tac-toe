@@ -74,6 +74,8 @@ class Gameboard {
 
   destroyBoard() {
     // Remove existing gameboard.
+    // https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
+    // ripped this removeAllChildNodes() method from here ^^^
     function removeAllChildNodes(parent) {
       while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
