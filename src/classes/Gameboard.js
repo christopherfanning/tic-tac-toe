@@ -1,4 +1,4 @@
-module.exports = class Gameboard {
+class Gameboard {
 
   constructor(arg) {
     console.log(arg);
@@ -10,7 +10,7 @@ module.exports = class Gameboard {
     let div = document.createElement('div');
     let main = document.querySelector('main');
 
-    div.style.className = 'cell';
+    div.className = 'cell';
     main.appendChild(div);
 
     // return box;
@@ -32,6 +32,6 @@ module.exports = class Gameboard {
     console.log('Searching for winning conditions. ');
   }
 
-};
+}
 
 console.log('Gameboard imported!');
