@@ -1,7 +1,20 @@
 class Gameboard {
 
-  constructor(arg) {
-    console.log(arg);
+  constructor(player1, player2) {
+    const resetButton = document.querySelector('.resetButton');
+    resetButton.addEventListener('click', this.resetBoard);
+
+    this.winningConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+
   }
 
   build() {
@@ -17,9 +30,10 @@ class Gameboard {
         cell.className = "cell col";
         row.appendChild(cell);
       }
-      main.appendChild(row);
+      gameboard.appendChild(row);
     }
 
+    main.appendChild(gameboard);
     this.makeBoardClickable();
   }
 
@@ -34,16 +48,41 @@ class Gameboard {
 
   handleClick(cell, cellClicked) {
     moves[currentPlayer].push(cellClicked);
-    console.log('cell clicked');
     cell.style.backgroundColor = color;
-    checkWinningCondition();
+    this.checkWinningCondition();
     togglePlayer();
     cell.style.pointerEvents = "none";
   }
 
-  destroy() {
+  resetBoard() {
+    console.log('you clicked reset.');
+    moves = [
+      [],
+      []
+    ];
+    currentPlayer = 0;
+    color = 'orange';
+    playerColor.style.backgroundColor = color;
+    let cells = document.querySelectorAll('.cell');
+    gameboard.destroyBoard();
+    gameboard.build();
+    // this.build();
+  }
+
+  destroyBoard() {
     // Remove existing gameboard.
+    function removeAllChildNodes(parent) {
+      while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      }
+    }
+    console.log('Destroy gameboard.');
+    let removeMe = document.querySelector('.gameboard');
+    console.log(removeMe);
+    // removeMe.remove();
     console.log('gameboard destroyed.');
+    removeAllChildNodes(removeMe);
+    removeMe.remove();
   }
 
   placePiece() {
@@ -53,7 +92,35 @@ class Gameboard {
 
   checkWinningCondition() {
     console.log('Searching for winning conditions. ');
+
+    function isWinPresent(moves, winCondition) {
+      return winCondition.every(vals => {
+        return moves.includes(vals);
+      });
+    }
+
+    this.winningConditions.forEach(arr => {
+      if (isWinPresent(moves[currentPlayer], arr)) {
+        let winningColor = document.querySelector('.color').style.backgroundColor;
+        document.querySelector('.winStatus').innerHTML = '<h1>Player Wins!</h1>';
+        document.querySelector('.winningColor').style.backgroundColor = winningColor;
+        freezeGameBoard();
+      } else if (moves[0].length >= 5) {
+        document.querySelector('.winStatus').innerHTML = "<h1>Cat's Game! Draw.</h1>";
+      }
+    });
+
+    function freezeGameBoard() {
+      let boxes = document.querySelectorAll('.cell');
+      boxes.forEach(cell => {
+        cell.style.pointerEvents = "none";
+      });
+      document.querySelector('.gameStatus').style.display = 'none';
+      document.querySelector('.winStatusSection').style.display = 'inline-block';
+    }
+
   }
+
 
 }
 
