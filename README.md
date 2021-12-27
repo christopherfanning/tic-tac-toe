@@ -22,6 +22,10 @@
 * add click handlers to them.
 * Change background when clicked. 
 
+![Wire Frame](https://christopherfanning.github.io/img/ttt.png)
+
+
+
 ### Winning Conditions ###
 * Currently using an array containing the 8 possible winning conditions and checking that against another array of player moves.
 
