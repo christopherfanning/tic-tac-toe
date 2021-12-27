@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/christopherfanning/tic-tac-toe#readme",
   "dependencies": {
+    "@mojs/core": "^1.2.1",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "howler": "^2.2.3"

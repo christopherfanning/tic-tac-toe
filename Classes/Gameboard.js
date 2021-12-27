@@ -1,12 +1,15 @@
-class Gameboard {
+module.exports = class Gameboard {
 
-  constructor() {
-
+  constructor(arg) {
+    console.log(arg);
   }
 
   build() {
     // Builds new gameboard if one doesn't exist. 
     console.log('gameboard built.');
+    // document.createElement('div');
+    // return box;
+
 
   }
 
@@ -24,6 +27,6 @@ class Gameboard {
     console.log('Searching for winning conditions. ');
   }
 
-}
+};
 
 console.log('Gameboard imported!');

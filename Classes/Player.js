@@ -1,4 +1,4 @@
-class Player {
+module.exports = class Player {
 
   constructor(gamePiece, name) {
     this.gamePiece = gamePiece;
@@ -7,14 +7,15 @@ class Player {
 
 
   win() {
-
+    console.log(`${this.name} wins`);
   }
 
   lose() {
 
+    console.log(`Someone lost. `);
   }
 
 
-}
+};
 
 console.log('Player, imported!');
