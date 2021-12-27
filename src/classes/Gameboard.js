@@ -27,7 +27,7 @@ class Gameboard {
       row.className = 'row justify-content-center';
       for (let j = 0; j < 3; j++) {
         let cell = document.createElement('div');
-        cell.className = "cell col";
+        cell.className = "cell col justify-content-center align-items-center";
         row.appendChild(cell);
       }
       gameboard.appendChild(row);
@@ -49,9 +49,14 @@ class Gameboard {
   handleClick(cell, cellClicked) {
     moves[currentPlayer].push(cellClicked);
     cell.style.backgroundColor = color;
+    // cell.id = "bouncyCircle";
+    cell.innerText = playerMark;
+    cell.classList.add = "animate";
     this.checkWinningCondition();
     togglePlayer();
     cell.style.pointerEvents = "none";
+    // bouncyCircle.play();
+    // gameboard.checkAnimations();
   }
 
   resetBoard() {
@@ -62,10 +67,13 @@ class Gameboard {
     ];
     currentPlayer = 0;
     color = 'orange';
+    playerMark = 'X';
     playerColor.style.backgroundColor = color;
     let cells = document.querySelectorAll('.cell');
     gameboard.destroyBoard();
     gameboard.build();
+    document.querySelector('.winStatusSection').style.display = 'none';
+    document.querySelector('.gameStatus').style.display = 'block';
     // this.build();
   }
 
@@ -78,8 +86,6 @@ class Gameboard {
     }
     console.log('Destroy gameboard.');
     let removeMe = document.querySelector('.gameboard');
-    console.log(removeMe);
-    // removeMe.remove();
     console.log('gameboard destroyed.');
     removeAllChildNodes(removeMe);
     removeMe.remove();
@@ -106,6 +112,8 @@ class Gameboard {
         document.querySelector('.winningColor').style.backgroundColor = winningColor;
         freezeGameBoard();
       } else if (moves[0].length >= 5) {
+        document.querySelector('.gameStatus').style.display = "none";
+        document.querySelector('.winStatusSection').style.display = 'block';
         document.querySelector('.winStatus').innerHTML = "<h1>Cat's Game! Draw.</h1>";
       }
     });
@@ -121,6 +129,27 @@ class Gameboard {
 
   }
 
+
+
+  checkAnimations() {
+    const bouncyCircle = new mojs.Shape({
+      parent: '.cell',
+      shape: 'circle',
+      fill: {
+        '#F64040': '#FC46AD'
+      },
+      radius: {
+        20: 80
+      },
+      duration: 2000,
+      isYoyo: true,
+      isShowStart: true,
+      easing: 'elastic.inout',
+      repeat: 1,
+    });
+
+    bouncyCircle.play();
+  }
 
 }
 
