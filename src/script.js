@@ -36,6 +36,7 @@ function freezeGameBoard() {
   boxes.forEach(cell => {
     cell.style.pointerEvents = "none";
   });
+  document.querySelector('.gameStatus').style.display = 'none';
 }
 
 function checkWinningCondition() {
