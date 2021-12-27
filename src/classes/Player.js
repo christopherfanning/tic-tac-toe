@@ -1,4 +1,4 @@
-module.exports = class Player {
+class Player {
 
   constructor(gamePiece, name) {
     this.gamePiece = gamePiece;
@@ -16,6 +16,6 @@ module.exports = class Player {
   }
 
 
-};
+}
 
 console.log('Player, imported!');

@@ -37,6 +37,7 @@ function freezeGameBoard() {
     cell.style.pointerEvents = "none";
   });
   document.querySelector('.gameStatus').style.display = 'none';
+  document.querySelector('.winStatusSection').style.display = 'inline-block';
 }
 
 function checkWinningCondition() {
@@ -86,51 +87,41 @@ function resetBoard() {
     cell.style.pointerEvents = 'auto';
   });
 
-
+  document.querySelector('.gameStatus').style.display = 'inline-block';
+  document.querySelector('.winStatusSection').style.display = 'none';
 
 }
 
 
-// Add a clickhandler to all cells on gameBoard
-cells.forEach((cell, cellNumber) => {
-  cell.addEventListener('click', () => {
-    handleClick(cell, cellNumber);
-  });
-});
 
 let gameboard = new Gameboard();
 
-// gameboard.build();
-// gameboard.build();
-// gameboard.build();
-// gameboard.build();
-// gameboard.build();
+// const bouncyCircle = new mojs.Shape({
+//   parent: '#bouncyCircle',
+//   shape: 'circle',
+//   fill: {
+//     '#F64040': '#FC46AD'
+//   },
+//   radius: {
+//     20: 80
+//   },
+//   duration: 2000,
+//   isYoyo: true,
+//   isShowStart: true,
+//   easing: 'elastic.inout',
+//   repeat: 1,
+// });
 
-const bouncyCircle = new mojs.Shape({
-  parent: '#bouncyCircle',
-  shape: 'circle',
-  fill: {
-    '#F64040': '#FC46AD'
-  },
-  radius: {
-    20: 80
-  },
-  duration: 2000,
-  isYoyo: true,
-  isShowStart: true,
-  easing: 'elastic.inout',
-  repeat: 1,
-});
+// bouncyCircle.play();
 
-bouncyCircle.play();
-
-const cross = new mojs.Shape({
-  shape: 'cross',
-  radius: 20,
-  radiusY: 30,
-  top: pos.row1,
-  left: pos.col2,
-  stroke: color2, //no fill for this one
-  isShowStart: true,
-  y: -25
-});
+gameboard.build();
+// const cross = new mojs.Shape({
+//   shape: 'cross',
+//   radius: 20,
+//   radiusY: 30,
+//   top: pos.row1,
+//   left: pos.col2,
+//   stroke: color2, //no fill for this one
+//   isShowStart: true,
+//   y: -25
+// });
