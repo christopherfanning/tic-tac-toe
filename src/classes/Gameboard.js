@@ -7,7 +7,12 @@ module.exports = class Gameboard {
   build() {
     // Builds new gameboard if one doesn't exist. 
     console.log('gameboard built.');
-    // document.createElement('div');
+    let div = document.createElement('div');
+    let main = document.querySelector('main');
+
+    div.style.className = 'cell';
+    main.appendChild(div);
+
     // return box;
 
 
