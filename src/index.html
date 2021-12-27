@@ -16,11 +16,21 @@
 <!-- TODO Grid represented by 2d array and  -->
 
 
-<body>
+<body class="container justify-content-center align-items-center ">
   <header>
     <h1 class="display-1 text-center">Chris tac toe</h1>
   </header>
 
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+
+        <button class="resetButton btn btn-danger btn-lg ">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
   <main class='container justify-content-center align-content-center'>
 
 
@@ -28,33 +38,29 @@
   </main>
 
   <section class="container align-content-center">
-    <div class="row justify-content-center">
-      <div class="gameStatus">
-        <h1 class='display-5 text-decoration-underline'>Status</h1>
-        <h2 class='display-6'>Current player</h2>
-        <div class="color"></div>
+    <div class="row justify-content-center align-items-center">
+      <div class=" text-center col justify-content-center align-items-center">
+
+        <div class="gameStatus justify-content-center align-items-center align-content-center">
+          <h1 class='display-5 text-decoration-underline'>Status</h1>
+          <h2 class='display-6'>Current player</h2>
+          <div class="color"></div>
+        </div>
+
+        <section class="winStatusSection">
+
+          <div class="winningColor"></div>
+          <div class="winStatus"></div>
+
+        </section>
       </div>
 
-      <section class="winStatusSection">
-
-        <div class="winningColor"></div>
-        <div class="winStatus"></div>
-
-      </section>
     </div>
 
-    <button class="resetButton btn btn-danger btn-lg">
-      Reset
-    </button>
   </section>
 
 
-  <div class="testAnimations">
-
-
-    <div id="bouncyCircle"></div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
     integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="

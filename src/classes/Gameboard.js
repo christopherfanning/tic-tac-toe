@@ -18,6 +18,7 @@ class Gameboard {
   }
 
   build() {
+    // Loops that build all the gameboard elements.
     console.log('gameboard is building.');
     let main = document.querySelector('main');
     let gameboard = document.createElement('div');
@@ -49,14 +50,10 @@ class Gameboard {
   handleClick(cell, cellClicked) {
     moves[currentPlayer].push(cellClicked);
     cell.style.backgroundColor = color;
-    // cell.id = "bouncyCircle";
     cell.innerText = playerMark;
-    cell.classList.add = "animate";
     this.checkWinningCondition();
     togglePlayer();
     cell.style.pointerEvents = "none";
-    // bouncyCircle.play();
-    // gameboard.checkAnimations();
   }
 
   resetBoard() {
@@ -69,12 +66,10 @@ class Gameboard {
     color = 'orange';
     playerMark = 'X';
     playerColor.style.backgroundColor = color;
-    let cells = document.querySelectorAll('.cell');
     gameboard.destroyBoard();
     gameboard.build();
     document.querySelector('.winStatusSection').style.display = 'none';
     document.querySelector('.gameStatus').style.display = 'block';
-    // this.build();
   }
 
   destroyBoard() {
@@ -91,10 +86,6 @@ class Gameboard {
     removeMe.remove();
   }
 
-  placePiece() {
-
-    console.log("game piece placed.");
-  }
 
   checkWinningCondition() {
     console.log('Searching for winning conditions. ');
@@ -131,25 +122,6 @@ class Gameboard {
 
 
 
-  checkAnimations() {
-    const bouncyCircle = new mojs.Shape({
-      parent: '.cell',
-      shape: 'circle',
-      fill: {
-        '#F64040': '#FC46AD'
-      },
-      radius: {
-        20: 80
-      },
-      duration: 2000,
-      isYoyo: true,
-      isShowStart: true,
-      easing: 'elastic.inout',
-      repeat: 1,
-    });
-
-    bouncyCircle.play();
-  }
 
 }
 

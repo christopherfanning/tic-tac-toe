@@ -47,6 +47,7 @@ body {
   background-color: orange;
   height: 5em;
   width: 5em;
+  display: inline-block
 }
 
 
@@ -57,8 +58,13 @@ body {
 }
 
 .winningColor {
+  margin: 1rem;
   height: 5rem;
   width: 5rem;
   /* border: 1px solid black; */
+  display: inline-block
+}
 
+.resetButton {
+  margin: 1rem;
 }
