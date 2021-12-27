@@ -11,10 +11,10 @@ Wireframe.
 
 Planning:
 =========
-Flexbox container for the board squares
-divs for squares.
-add click handlers to them.
-Change background when clicked. 
+*Flexbox container for the board squares
+*divs for squares.
+*add click handlers to them.
+*Change background when clicked. 
 
 Winning Conditions
 ==================
