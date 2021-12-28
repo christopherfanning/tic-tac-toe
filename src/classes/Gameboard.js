@@ -1,9 +1,11 @@
 class Gameboard {
 
   constructor(player1, player2) {
+    // Add click handler to resetButton
     const resetButton = document.querySelector('.resetButton');
     resetButton.addEventListener('click', this.resetBoard);
 
+    // Define winning conditions for this board.
     this.winningConditions = [
       [0, 1, 2],
       [3, 4, 5],
@@ -19,7 +21,6 @@ class Gameboard {
 
   build() {
     // Loops that build all the gameboard elements.
-    console.log('gameboard is building.');
     let main = document.querySelector('main');
     let gameboard = document.createElement('div');
     gameboard.className = "gameboard container justify-content-center align-items-center";
@@ -85,16 +86,13 @@ class Gameboard {
         parent.removeChild(parent.firstChild);
       }
     }
-    console.log('Destroy gameboard.');
     let removeMe = document.querySelector('.gameboard');
-    console.log('gameboard destroyed.');
     removeAllChildNodes(removeMe);
     removeMe.remove();
   }
 
 
   checkWinningCondition() {
-    console.log('Searching for winning conditions. ');
 
 
     // Ripped this off from: 
@@ -118,6 +116,7 @@ class Gameboard {
       } else if (moves[0].length >= 5) {
         document.querySelector('.gameStatus').style.display = "none";
         document.querySelector('.winStatusSection').style.display = 'block';
+        document.querySelector('.winningColor').style.display = 'none';
         document.querySelector('.winStatus').innerHTML = "<h1>Cat's Game! Draw.</h1>";
       }
     });
@@ -137,5 +136,3 @@ class Gameboard {
 
 
 }
-
-console.log('Gameboard imported!');

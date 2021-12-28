@@ -12,65 +12,53 @@
 </head>
 
 
-<!-- TODO grow animation for when a player marks a square. -->
-<!-- TODO Grid represented by 2d array and  -->
+<body class="container">
 
-
-<body class="container justify-content-center align-items-center ">
   <header>
     <h1 class="display-1 text-center">Chris tac toe</h1>
   </header>
 
-  <div class="container">
-    <div class="row">
-      <div class="col text-center">
-
-        <button class="resetButton btn btn-danger btn-lg ">
-          Reset
-        </button>
-      </div>
-    </div>
+  <!-- That's a lot for a reset button -->
+  <div class="col text-center">
+    <button class="resetButton btn btn-danger btn-lg ">
+      Reset
+    </button>
   </div>
-  <main class='container justify-content-center align-content-center'>
 
 
+  <!-- Gameboard gets built here -->
+  <main class='container'>
 
   </main>
 
-  <section class="container align-content-center">
-    <div class="row justify-content-center align-items-center">
-      <div class=" text-center col justify-content-center align-items-center">
 
-        <div class="gameStatus justify-content-center align-items-center align-content-center">
-          <h1 class='display-5 text-decoration-underline'>Status</h1>
+
+  <section class="container align-content-center">
+    <div class="row">
+      <div class="text-center col">
+
+        <!-- Game Status Area -->
+        <div class="gameStatus">
           <h2 class='display-6'>Current player</h2>
           <div class="color"></div>
         </div>
 
+        <!--  Win status Area-->
         <section class="winStatusSection">
-
           <div class="winningColor"></div>
           <div class="winStatus"></div>
-
         </section>
       </div>
-
     </div>
 
   </section>
 
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script> -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
-    integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
   <script src="./classes/Gameboard.js"></script>
-  <script src="./classes/Player.js"></script>
-  <script src="./classes/Animator.js"></script>
   <script src="./script.js"></script>
 </body>
 

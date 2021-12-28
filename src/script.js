@@ -1,4 +1,4 @@
-let cells = document.querySelectorAll('.cell');
+// Initialize Player conditions. 
 let moves = [
   [],
   []
@@ -10,6 +10,7 @@ const playerColor = document.querySelector('.color');
 let playerMark = "X";
 
 function togglePlayer() {
+  // This toggles the player.
   if (currentPlayer === 0) {
     currentPlayer = 1;
     color = "green";
@@ -25,6 +26,6 @@ function togglePlayer() {
 }
 
 
-
+// Initialize the gameboard and start the game. 
 let gameboard = new Gameboard();
 gameboard.build();

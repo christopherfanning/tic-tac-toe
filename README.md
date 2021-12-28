@@ -8,13 +8,14 @@
   * Display of which player won the game
   * Display of cat's game (Draw condition)
   * Don't allow clicks after gameover condition.
+  * Hosted live
   * This readme file
 
 ### Technology used: ###
 * javascipt ES6
 * html
 * CSS
-* Bootstrap for the layout and sensible default styles.
+* Bootstrap for the layout and default styles.
 
 
 
@@ -47,7 +48,9 @@ this.winningConditions = [
 ### Favorite features: ###
  * The loops for building out the board elements was fun to write.
  * Using 2 arrays to track each players moves
- ```moves = [ [5, 4, 7], [3, 9, 0] ]; ```
+ ```
+   moves = [ [5, 4, 7], [3, 9, 0] ]; 
+ ```
  * and then checking against the winning conditions to see if either player had achieved a winning condition yet. 
  * The gameboard was setup this way:
  ![diagram of board design](https://christopherfanning.github.io/img/box.png)
@@ -67,7 +70,7 @@ this.winningConditions = [
 
 
 ### Gold ###
-* Animation frame work
+* Animation framework
 * Sounds
 * Font awesome for choosing custom piece. 
 * Save state in db, with code/ cookie. 
@@ -80,14 +83,15 @@ this.winningConditions = [
 - - - - 
 #### Presentation ####
   * What would you do differently?
-    * Less code.  I feel like I over-complicated it.
+    * Less code.  I may have over-complicated it.
+    * MVC would have been a good model.
 
   * What are you most proud of?
     * The two arrays to track user moves.
 
   * What would you do next?
     * Probably another refactor. 
-    * The 2d nested array matrix
+    * The 2d (nested) array matrix
 
   * How did you plan your project?
     * I used the userstories provided to drive the process.
