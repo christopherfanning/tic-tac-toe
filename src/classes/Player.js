@@ -1,6 +1,6 @@
 class Player {
 
-  constructor(gamePiece, name) {
+  constructor(name, gamePiece) {
     this.gamePiece = gamePiece;
     this.name = name;
   }

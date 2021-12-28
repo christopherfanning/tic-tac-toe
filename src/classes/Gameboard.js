@@ -57,7 +57,7 @@ class Gameboard {
   }
 
   resetBoard() {
-    console.log('you clicked reset.');
+    // Reset all player stats to zero condition.
     moves = [
       [],
       []
@@ -66,8 +66,12 @@ class Gameboard {
     color = 'orange';
     playerMark = 'X';
     playerColor.style.backgroundColor = color;
+
+    // Make a new board.
     gameboard.destroyBoard();
     gameboard.build();
+
+    // Hide the win block and show current player.
     document.querySelector('.winStatusSection').style.display = 'none';
     document.querySelector('.gameStatus').style.display = 'block';
   }
@@ -92,12 +96,19 @@ class Gameboard {
   checkWinningCondition() {
     console.log('Searching for winning conditions. ');
 
+
+    // Ripped this off from: 
+    // https://stackoverflow.com/questions/53606337/check-if-array-contains-all-elements-of-another-array
+    // Slight refactor to make it more readable in this context. 
+
     function isWinPresent(moves, winCondition) {
       return winCondition.every(vals => {
         return moves.includes(vals);
       });
     }
 
+
+    // This could use a refactor. Pull a win / draw into their own functions
     this.winningConditions.forEach(arr => {
       if (isWinPresent(moves[currentPlayer], arr)) {
         let winningColor = document.querySelector('.color').style.backgroundColor;
