@@ -15,9 +15,14 @@ body {
   font-size: 4rem;
   color: black;
   padding: 0px;
+  margin: 0px;
   transition: all 0.5s ease-out;
+  display: flex;
 }
 
+.cell::target-text {
+  color: red;
+}
 
 .cell:hover {
   background-color: aqua;
